@@ -12,6 +12,7 @@ const useCart = () => {
   const { items, productsFullInfo, loading, error } = useAppSelector(
     (state) => state.cart
   );
+  const userAccessToken=useAppSelector(stat=>stat.auth.accessToken)
 
   useEffect(() => {
     const promise = dispatch(actGetProductsByItems());
@@ -41,7 +42,7 @@ const useCart = () => {
     quantity: items[el.id],
   }));
 
-  return { loading, error, products, changeQuantityHandler, removeItemHandler };
+  return { loading, error, products, changeQuantityHandler, removeItemHandler,userAccessToken };
 };
 
 export default useCart;

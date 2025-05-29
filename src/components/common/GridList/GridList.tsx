@@ -12,7 +12,7 @@ const GridList = <T extends { id?: number }>({
   records,
   renderItem,
 }: GridListProps<T>) => {
-    console.log(records)
+    
   const renderList =
     records.length > 0 ? (
      records.map((record, index) => (

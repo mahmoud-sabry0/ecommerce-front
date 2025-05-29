@@ -27,6 +27,7 @@
 
 /* row dir */
 .product-row {
+  
   width: 130px;
   display: flex;
   flex-direction: column;
