@@ -12,6 +12,7 @@ const HeaderLeftBar = () => {
     (state) => state.wishlist.itemsId.length
   );
   const cartTotalQuantity = useAppSelector(getCartTotalQuantitySelector);
+  const { accessToken } = useAppSelector((state) => state.auth);
 
   return (
     <div className={headerLeftBar}>
@@ -21,10 +22,11 @@ const HeaderLeftBar = () => {
         totalQuantity={wishlistTotalQuantity}
         svgIcon={<WishlistIcon title="wishlist" />}
       />
+      
       <HeaderCounter
         to="cart"
         title="Cart"
-        totalQuantity={cartTotalQuantity}
+        totalQuantity={ accessToken? cartTotalQuantity:0}
         svgIcon={<CartIcon title="cart" />}
       />
     </div>

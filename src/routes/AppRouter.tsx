@@ -49,9 +49,11 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: (
-          <PageSuspenseFallback>
+          <ProtectedRoute>
+            <PageSuspenseFallback>
             <Cart />
-          </PageSuspenseFallback>
+         </PageSuspenseFallback>
+          </ProtectedRoute>
         ),
       },
       {
